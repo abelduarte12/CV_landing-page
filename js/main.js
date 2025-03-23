@@ -77,8 +77,10 @@ function sendEmail(event) {
         .then(function(response) {
             alert('¡Mensaje enviado con éxito!');
             document.getElementById('contactForm').reset();
-        }, function(error) {
-            alert('Error al enviar el mensaje. Por favor, intente nuevamente.');
+        })
+        .catch(function(error) {
+            console.error('Error:', error);
+            alert('Error al enviar el mensaje: ' + error.text);
         });
 
     return false;

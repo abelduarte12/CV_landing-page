@@ -230,24 +230,30 @@
                 <h3>Contáctame</h3>
             </div>
             
-            <form class="contact-form" id="contactForm" onsubmit="return sendEmail(event)">
-                <div class="form-group">
-                    <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" required>
+            <form id="form">
+                <div class="field">
+                  <label for="name">name</label>
+                  <input type="text" name="name" id="name">
                 </div>
-                
-                <div class="form-group">
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="field">
+                  <label for="time">time</label>
+                  <input type="text" name="time" id="time">
                 </div>
-                
-                <div class="form-group">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                <div class="field">
+                  <label for="message">message</label>
+                  <input type="text" name="message" id="message">
                 </div>
-                
-                <button type="submit" class="submit-btn">Enviar</button>
-            </form>
+                <div class="field">
+                  <label for="title">title</label>
+                  <input type="text" name="title" id="title">
+                </div>
+                <div class="field">
+                  <label for="email">email</label>
+                  <input type="text" name="email" id="email">
+                </div>
+              
+                <input type="submit" id="button" value="Send Email" >
+              </form>
         </section>
         
         <section class="section" id="idiomas">
@@ -284,6 +290,7 @@
     <script>
         (function() {
             emailjs.init("hZO_EceGWsadHKCh7");
+            // Asegúrate de que este sea tu Public Key correcto
         })();
     </script>
     <script src="js/main.js"></script>
