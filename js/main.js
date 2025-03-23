@@ -38,4 +38,48 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // Inicializar EmailJS
+    emailjs.init("TU_PUBLIC_KEY"); // Necesitarás reemplazar esto con tu public key
+
+    window.sendEmail = function(event) {
+        event.preventDefault();
+
+        const templateParams = {
+            from_name: document.getElementById('nombre').value,
+            from_email: document.getElementById('email').value,
+            message: document.getElementById('mensaje').value,
+            to_name: "Edwin Abel",
+        };
+
+        emailjs.send('default_service', 'template_ip7v5wd', templateParams)
+            .then(function(response) {
+                alert('¡Mensaje enviado con éxito!');
+                document.getElementById('contactForm').reset();
+            }, function(error) {
+                alert('Error al enviar el mensaje: ' + error);
+            });
+
+        return false;
+    }
 });
+
+function sendEmail(event) {
+    event.preventDefault();
+
+    const templateParams = {
+        from_name: document.getElementById('nombre').value,
+        from_email: document.getElementById('email').value,
+        message: document.getElementById('mensaje').value
+    };
+
+    emailjs.send('default_service', 'template_default', templateParams)
+        .then(function(response) {
+            alert('¡Mensaje enviado con éxito!');
+            document.getElementById('contactForm').reset();
+        }, function(error) {
+            alert('Error al enviar el mensaje. Por favor, intente nuevamente.');
+        });
+
+    return false;
+}

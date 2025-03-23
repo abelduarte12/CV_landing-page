@@ -6,6 +6,7 @@
     <title>Edwin Abel Vilca Quispe | Ingeniero de Sistemas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <header>
@@ -229,7 +230,7 @@
                 <h3>Contáctame</h3>
             </div>
             
-            <form class="contact-form">
+            <form class="contact-form" id="contactForm" onsubmit="return sendEmail(event)">
                 <div class="form-group">
                     <label for="nombre">Nombre completo</label>
                     <input type="text" id="nombre" name="nombre" required>
@@ -280,6 +281,11 @@
         </div>
     </footer>
 
+    <script>
+        (function() {
+            emailjs.init("hZO_EceGWsadHKCh7");
+        })();
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
