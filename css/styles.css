@@ -40,6 +40,8 @@ header {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 0;
 }
 
 .profile-info {
@@ -49,8 +51,8 @@ header {
 }
 
 .profile-image {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 5px solid rgba(255, 255, 255, 0.3);
     object-fit: cover;
