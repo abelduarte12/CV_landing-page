@@ -6,9 +6,13 @@
     <title>Edwin Abel Vilca Quispe | Ingeniero de Sistemas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" 
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
-        emailjs.init('hZO_EceGWsadHKCh7')
+        (function() {
+            emailjs.init('LBfg6u5ok4y95aQFh');
+        })();
+
     </script>
 </head>
 <body>
@@ -233,30 +237,32 @@
                 <h3>Contáctame</h3>
             </div>
             
-            <form id="form">
-                <div class="field">
-                    <label for="name">name</label>
-                    <input type="text" name="name" id="name">
-                </div>
-                <div class="field">
-                    <label for="time">time</label>
-                    <input type="text" name="time" id="time">
-                </div>
-                <div class="field">
-                    <label for="message">message</label>
-                    <input type="text" name="message" id="message">
-                </div>
-                <div class="field">
-                    <label for="title">title</label>
-                    <input type="text" name="title" id="title">
-                </div>
-                <div class="field">
-                    <label for="email">email</label>
-                    <input type="text" name="email" id="email">
-                </div>
+            <div class="form-container">
+                <form id="form">
+                    <div class="field">
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div class="field">
+                        <label for="time">Hora</label>
+                        <input type="text" name="time" id="time">
+                    </div>
+                    <div class="field">
+                        <label for="message">Mensaje</label>
+                        <textarea name="message" id="message"></textarea>
+                    </div>
+                    <div class="field">
+                        <label for="title">Asunto</label>
+                        <input type="text" name="title" id="title">
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
 
-                <input type="submit" id="button" value="Send Email">
-            </form>
+                    <input type="submit" id="button" value="Enviar Email" class="submit-btn">
+                </form>
+            </div>
         </section>
         
         <section class="section" id="idiomas">
