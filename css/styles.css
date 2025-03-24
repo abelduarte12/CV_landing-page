@@ -300,7 +300,7 @@ footer {
     transition: var(--transition);
 }
 
-.social-links a:hover {
+social-links a:hover {
     background-color: var(--primary-color);
     transform: translateY(-3px);
 }
@@ -376,6 +376,71 @@ footer {
 .submit-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos modernos para el formulario */
+#form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.field {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.field label {
+    position: absolute;
+    left: 12px;
+    top: -10px;
+    background-color: white;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+    outline: none;
+}
+
+#button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#button:hover {
+    background-color: #0056b3;
+}
+
+#success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
 }
 
 /* Responsive */
