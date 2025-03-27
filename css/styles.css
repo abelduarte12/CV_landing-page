@@ -15,8 +15,9 @@
 }
 
 body {
-    background-color: #f9f9f9;
-    color: var(--text-color);
+    background-color: #232931;
+    color: #eeeeee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
 }
 
@@ -119,11 +120,11 @@ main {
 }
 
 .section {
-    background-color: white;
+    background-color: #393e46;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin-bottom: 30px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
@@ -138,7 +139,9 @@ main {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
-    color: var(--primary-color);
+    color: #4ecca3;
+    border-bottom: 2px solid #4ecca3;
+    padding-bottom: 10px;
 }
 
 .section-title i {
@@ -173,6 +176,10 @@ main {
     margin-bottom: 20px;
     padding-left: 20px;
     position: relative;
+    background-color: #1a1a2e;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
 }
 
 .education-item::before, .work-item::before {
@@ -248,14 +255,14 @@ main {
 
 .skill-bar {
     height: 10px;
-    background-color: #e0e0e0;
+    background-color: #1a1a2e;
     border-radius: 5px;
     overflow: hidden;
 }
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    background-color: #4ecca3;
     border-radius: 5px;
     width: 0;
     transition: width 1s ease-out;
@@ -370,20 +377,19 @@ social-links a:hover {
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
+    background-color: #4ecca3;
+    color: #1a1a2e;
     border: none;
-    padding: 12px 30px;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
-    transition: var(--transition);
+    transition: background-color 0.3s;
 }
 
 .submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #3db892;
 }
 
 /* Estilos modernos para el formulario */
@@ -548,7 +554,7 @@ social-links a:hover {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background-color: #1a1a2e;
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -576,7 +582,7 @@ social-links a:hover {
 }
 
 .nav-link {
-    color: #333;
+    color: #eeeeee;
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
@@ -597,7 +603,7 @@ social-links a:hover {
 }
 
 .nav-link:hover {
-    color: #007bff;
+    color: #4ecca3;
 }
 
 .nav-link:hover::before {
