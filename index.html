@@ -5,17 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edwin Abel Vilca Quispe | Ingeniero de Sistemas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script type="text/javascript" 
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init('LBfg6u5ok4y95aQFh');
-        })();
-
-    </script>
+    <link rel="stylesheet" href="css/tech-styles.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container container">
+            <div class="nav-brand">EV</div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#perfil" class="nav-link">Perfil</a></li>
+                <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
+                <li><a href="#educacion" class="nav-link">Educación</a></li>
+                <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                <li><a href="#tecnologias" class="nav-link">Tecnologías</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
     <header>
         <div class="container header-content">
             <img src="images/profile.jpg" alt="Edwin Abel Vilca Quispe" class="profile-image">
@@ -238,29 +250,26 @@
             </div>
             
             <div class="form-container">
-                <form id="form">
+                <form>
                     <div class="field">
                         <label for="name">Nombre</label>
                         <input type="text" name="name" id="name">
-                    </div>
-                    <div class="field">
-                        <label for="time">Hora</label>
-                        <input type="text" name="time" id="time">
-                    </div>
-                    <div class="field">
-                        <label for="message">Mensaje</label>
-                        <textarea name="message" id="message"></textarea>
                     </div>
                     <div class="field">
                         <label for="title">Asunto</label>
                         <input type="text" name="title" id="title">
                     </div>
                     <div class="field">
+                        <label for="message">Mensaje</label>
+                        <textarea name="message" id="message"></textarea>
+                    </div>
+                    
+                    <div class="field">
                         <label for="email">Email</label>
                         <input type="email" name="email" id="email">
                     </div>
 
-                    <input type="submit" id="button" value="Enviar Email" class="submit-btn">
+                    <input type="submit" value="Enviar" class="submit-btn">
                 </form>
             </div>
         </section>
@@ -273,13 +282,100 @@
             
             <div class="languages">
                 <div class="language-item">
-                    <h4>English</h4>
+                    <h4>Ingles</h4>
                     <div>Intermedio</div>
                 </div>
                 
                 <div class="language-item">
-                    <h4>Español</h></div>
+                    <h4>Español</h4>
                     <div>Nativo</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" id="tecnologias">
+            <div class="section-title">
+                <i class="fas fa-code"></i>
+                <h3>Mis Tecnologías</h3>
+            </div>
+            
+            <div class="technologies-container">
+                <div class="tech-category">
+                    <h4>Frontend</h4>
+                    <div class="technologies-grid">
+                        <div class="tech-item">
+                            <i class="devicon-html5-plain colored"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-css3-plain colored"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-javascript-plain colored"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-react-original colored"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-angularjs-plain colored"></i>
+                            <span>Angular</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-figma-plain colored"></i>
+                            <span>Figma</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>Backend</h4>
+                    <div class="technologies-grid">
+                        <div class="tech-item">
+                            <i class="devicon-java-plain colored"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-python-plain colored"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-csharp-plain colored"></i>
+                            <span>C#</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-php-plain colored"></i>
+                            <span>PHP</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-nodejs-plain colored"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-dart-plain colored"></i>
+                            <span>Dart</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>Base de Datos</h4>
+                    <div class="technologies-grid">
+                        <div class="tech-item">
+                            <i class="devicon-mysql-plain colored"></i>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-oracle-plain colored"></i>
+                            <span>Oracle</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="devicon-mongodb-plain colored"></i>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -288,9 +384,11 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in" style="color: #0077b5;"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github" style="color: #333;"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter" style="color: #1da1f2;"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook" style="color: #1877f2;"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-whatsapp" style="color: #25d366;"></i></a>
             </div>
             <p>&copy; 2025 Edwin Abel Vilca Quispe. Todos los derechos reservados.</p>
         </div>

@@ -28,20 +28,22 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 30px 0;
-    position: relative;
-    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    padding: 2rem 0;
+    margin-top: 60px; /* Para compensar la navbar fija */
 }
 
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
-    padding: 2rem 0;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .profile-info {
@@ -51,13 +53,13 @@ header {
 }
 
 .profile-image {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     border: 5px solid rgba(255, 255, 255, 0.3);
     object-fit: cover;
     transition: var(--transition);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 .profile-image:hover {
@@ -79,16 +81,22 @@ h2 {
 }
 
 .contact-info {
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
+    gap: 0.5rem;
     margin-bottom: 10px;
 }
 
 .contact-item i {
+    color: #333;
+    font-size: 1.2rem;
     margin-right: 10px;
     width: 20px;
     text-align: center;
@@ -468,6 +476,15 @@ social-links a:hover {
     .section {
         padding: 20px;
     }
+
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .profile-info h1 {
+        font-size: 2rem;
+    }
 }
 
 /* Floating Form */
@@ -523,4 +540,183 @@ social-links a:hover {
 
 .submit-btn:hover {
     background-color: #0056b3;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 0;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-menu.active {
+        max-height: 300px;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1rem 2rem;
+    }
+
+    .nav-link::before {
+        display: none;
+    }
+}
+
+/* Technologies */
+.technologies-container {
+    display: flex;
+    flex-direction: row; /* Cambio a row para disposición horizontal */
+    gap: 1rem;
+    flex-wrap: wrap; /* Permite wrapping en pantallas pequeñas */
+}
+
+.tech-category {
+    flex: 1; /* Hace que cada categoría tome el mismo espacio */
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem;
+    border-radius: 8px;
+    min-width: 300px; /* Asegura un ancho mínimo */
+}
+
+.tech-category h4 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+.technologies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Cambiado para forzar 2 columnas */
+    gap: 0.5rem; /* Reducido el espacio entre elementos */
+    justify-items: center;
+}
+
+.tech-item {
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+    transform: translateY(-5px);
+}
+
+.tech-item i {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tech-item span {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .technologies-container {
+        flex-direction: column;
+    }
+    
+    .tech-category {
+        width: 100%;
+    }
+
+    .technologies-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
 }

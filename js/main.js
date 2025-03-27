@@ -39,50 +39,62 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Inicializar EmailJS
-    emailjs.init("TU_PUBLIC_KEY"); // Necesitarás reemplazar esto con tu public key
-
-    window.sendEmail = function(event) {
-        event.preventDefault();
-
-        const templateParams = {
-            from_name: document.getElementById('nombre').value,
-            from_email: document.getElementById('email').value,
-            message: document.getElementById('mensaje').value,
-            to_name: "Edwin Abel",
-        };
-
-        emailjs.send('default_service', 'template_ip7v5wd', templateParams)
-            .then(function(response) {
-                alert('¡Mensaje enviado con éxito!');
-                document.getElementById('contactForm').reset();
-            }, function(error) {
-                alert('Error al enviar el mensaje: ' + error);
-            });
-
-        return false;
-    }
+    
 
     const btn = document.getElementById('button');
 
     document.getElementById('form')
-        .addEventListener('submit', function(event) {
-            event.preventDefault();
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-            btn.value = 'Sending...';
+    // Toggle menu en mobile
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
 
-            const serviceID = 'default_service';
-            const templateID = 'template_ip7v5wd';
-
-            emailjs.sendForm(serviceID, templateID, this)
-                .then(() => {
-                    btn.value = 'Send Email';
-                    alert('Sent!');
-                }, (err) => {
-                    btn.value = 'Send Email';
-                    alert(JSON.stringify(err));
-                });
+    // Cerrar menu al hacer click en un enlace
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
         });
+    });
+
+    // Scroll suave
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            const navHeight = navbar.offsetHeight;
+
+            window.scrollTo({
+                top: targetElement.offsetTop - navHeight,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Cambiar estilo del navbar al hacer scroll
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > lastScroll) {
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            navbar.style.transform = 'translateY(0)';
+        }
+
+        if (currentScroll === 0) {
+            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        } else {
+            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+        }
+
+        lastScroll = currentScroll;
+    });
 });
 
 function sendEmail(event) {
